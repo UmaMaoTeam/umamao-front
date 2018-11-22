@@ -10,7 +10,6 @@ import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
-import ActivityRegister from "./src/components/activityRegister/ActivityRegister";
 import ActivityNavigatorContainer from "./src/ActivityNavigator";
 
 const MainNavigator = createStackNavigator(

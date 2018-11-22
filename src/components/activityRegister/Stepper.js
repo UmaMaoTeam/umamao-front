@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
+import {Colors} from "../../config/colors";
 
 export default class Stepper extends Component {
   constructor() {
@@ -44,10 +45,10 @@ const styles = new StyleSheet.create({
     marginHorizontal: 2
   },
   stepFull: {
-    backgroundColor: "red"
+    backgroundColor: Colors.primary
   },
   stepEmpty: {
-    borderColor: "red",
+    borderColor: Colors.primary,
     borderWidth: 1
   }
 });

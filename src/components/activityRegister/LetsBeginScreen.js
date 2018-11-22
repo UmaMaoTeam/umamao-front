@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import { Text, View, Button, StyleSheet } from "react-native";
 import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
 import Stepper from "./Stepper";
-
-// import t from "tcomb-form-native";
-
-// const Form = t.form.Form;
+import OrangeButton from "../shared/OrangeButton";
+import {Colors} from "../../config/colors";
 
 export default class LetsBeginScreen extends Component {
   constructor(props) {
@@ -43,8 +41,10 @@ export default class LetsBeginScreen extends Component {
         <View style={styles.container_flex}>
           {checkboxValue.map((option, index) => {
             return (
-              <View key={index}>
+              <View style={styles.checkbox} key={index}>
                 <CircleCheckBox
+                  innerColor={Colors.primary}
+                  outerColor={Colors.primary}
                   key={option.value}
                   checked={option.value === selectedCheckbox}
                   onToggle={(checked, index) =>
@@ -52,15 +52,17 @@ export default class LetsBeginScreen extends Component {
                   }
                   labelPosition={LABEL_POSITION.RIGHT}
                   label={option.label}
-                  styleLabel={{ fontSize: 17 }}
-                  innerSize={15}
+                  styleLabel={styles.label}
+                  outerSize={24}
+                  filterSize={19}
+                  innerSize={14}
                 />
                 <Text>{option.hint}</Text>
               </View>
             );
           })}
         </View>
-        <Button title="Próximo ->" />
+        <OrangeButton text="Próximo"/>
       </View>
     );
   }
@@ -79,10 +81,24 @@ const styles = new StyleSheet.create({
   },
   text: {
     alignSelf: "center",
-    color: "#000000",
+    color: Colors.black,
     fontSize: 36,
-    fontWeight: "600",
+    fontWeight: "400",
     paddingTop: 60,
     paddingBottom: 60
+  },
+  label: {
+    fontSize: 24,
+    fontStyle: "italic",
+    fontWeight: "400",
+    color: Colors.black,
+    paddingLeft: 5
+  },
+  checkbox: {
+    marginBottom: 40
+  },
+  nextBtn: {
+    backgroundColor: 'transparent',
+    borderWidth: 0,
   }
 });
