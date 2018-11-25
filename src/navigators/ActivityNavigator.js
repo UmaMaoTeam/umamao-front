@@ -1,8 +1,8 @@
-import SelectCategoryScreen from "./components/activityRegister/SelectCategoryScreen";
-import LastInfosScreen from "./components/activityRegister/LastInfosScreen";
-import LetsBeginScreen from "./components/activityRegister/LetsBeginScreen";
-import SendPictureScreen from "./components/activityRegister/SendPictureScreen";
-import TellUsMoreScreen from "./components/activityRegister/TellUsMoreScreen";
+import SelectCategoryScreen from "../components/activityRegister/SelectCategoryScreen";
+import LastInfosScreen from "../components/activityRegister/LastInfosScreen";
+import LetsBeginScreen from "../components/activityRegister/LetsBeginScreen";
+import SendPictureScreen from "../components/activityRegister/SendPictureScreen";
+import TellUsMoreScreen from "../components/activityRegister/TellUsMoreScreen";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const ActivityNavigator = createStackNavigator(

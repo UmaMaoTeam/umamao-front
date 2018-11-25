@@ -10,6 +10,7 @@ export default class OrangeButton extends Component {
   render() {
     return (
       <TouchableOpacity
+        activeOpacity={0.9}
         onPress={this.props.onPress}
       >
         <LinearGradient

@@ -1,28 +1,22 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, {Component} from "react";
+import {createStackNavigator, createAppContainer} from "react-navigation";
 
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
-
-import ActivityNavigatorContainer from "./src/ActivityNavigator";
+import ActivityNavigatorContainer from "./src/navigators/ActivityNavigator";
+import HomeNavigatorContainer from "./src/navigators/HomeNavigator";
 
 const MainNavigator = createStackNavigator(
   {
+    Home: {
+      screen: HomeNavigatorContainer,
+      navigationOptions: {header: null}
+    },
     ActivityRegister: {
       screen: ActivityNavigatorContainer,
-      navigationOptions: {
-        header: null
-      }
+      navigationOptions: {header: null}
     }
   },
   {
-    initialRouteName: "ActivityRegister"
+    initialRouteName: "Home"
   }
 );
 
@@ -31,6 +25,6 @@ const AppNav = createAppContainer(MainNavigator);
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    return <AppNav />;
+    return <AppNav/>;
   }
 }
