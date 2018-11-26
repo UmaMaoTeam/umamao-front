@@ -1,9 +1,11 @@
-import {createStackNavigator, createAppContainer} from "react-navigation";
+import {createAppContainer} from "react-navigation";
 import HomeScreen from "../components/home/HomeScreen";
 import LoginScreen from "../components/home/LoginScreen";
 import SignupScreen from "../components/home/SignupScreen";
+import { FluidNavigator } from "react-navigation-fluid-transitions";
 
-const HomeNavigator = createStackNavigator(
+
+const HomeNavigator = FluidNavigator(
   {
     Home: {
       screen: HomeScreen,
@@ -11,7 +13,7 @@ const HomeNavigator = createStackNavigator(
     },
     Login: {
       screen: LoginScreen,
-      navigationOptions: {header: null}
+      navigationOptions: {header: null},
     },
     Signup: {
       screen: SignupScreen,
