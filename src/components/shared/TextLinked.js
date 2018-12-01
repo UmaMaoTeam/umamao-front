@@ -5,9 +5,12 @@ import { Colors } from "../../config/colors";
 import {verticalScale} from "../../config/responsiveness";
 
 export default class TextLinked extends Component {
+  constructor(props) {
+    super(props);
+  }
   renderIcon() {
     if (this.props.icon) {
-      return (<Icon name={this.props.icon} size={verticalScale(40)} color={Colors.blackButton}/>);
+      return (<Icon name={this.props.icon} size={verticalScale(this.props.iconSize || 40)} color={Colors.blackButton}/>);
     }
   }
 
@@ -17,8 +20,8 @@ export default class TextLinked extends Component {
         activeOpacity={0.7}
         onPress={this.props.onPress}
       >
-        <View style={styles.textContainer}>
-          <Text style={[styles.text, this.props.style]}>{this.props.text}</Text>
+        <View style={[styles.textContainer, this.props.containerStyle]}>
+          <Text style={[styles.text, this.props.textStyle]}>{this.props.text}</Text>
           {this.renderIcon()}
         </View>
       </TouchableOpacity>

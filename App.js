@@ -2,7 +2,9 @@ import React, {Component} from "react";
 import {createAppContainer} from "react-navigation";
 import {FluidNavigator} from "react-navigation-fluid-transitions";
 import LinearGradient from "react-native-linear-gradient";
-import {Dimensions, StyleSheet} from "react-native";
+import {Dimensions, StyleSheet, Header, StatusBar, View} from "react-native";
+import './src/config/ReactotronConfig';
+import Reactotron from 'reactotron-react-native';
 
 import ActivityNavigatorContainer from "./src/navigators/ActivityNavigator";
 import HomeNavigatorContainer from "./src/navigators/HomeNavigator";
@@ -30,13 +32,16 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        style={styles.homeContainer}
-        colors={[Colors.home1, Colors.home2]}>
-        <AppNav/>
-      </LinearGradient>
+      <View>
+        <StatusBar backgroundColor={Colors.mix} animated={true}></StatusBar>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          style={styles.homeContainer}
+          colors={[Colors.home1, Colors.home2]}>
+          <AppNav/>
+        </LinearGradient>
+      </View>
     );
   }
 }

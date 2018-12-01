@@ -25,7 +25,7 @@ export default class BlackButton extends Component {
 
 const styles = new StyleSheet.create({
   button: {
-    width: scale(200),
+    width: scale(180),
     height: verticalScale(50),
     display: "flex",
     flexDirection: "row",
@@ -35,7 +35,7 @@ const styles = new StyleSheet.create({
     backgroundColor: Colors.blackButton,
   },
   text: {
-    fontSize: scale(26),
+    fontSize: scale(24),
     color: '#fff',
     fontWeight: "400"
   }

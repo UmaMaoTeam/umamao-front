@@ -1,13 +1,13 @@
 import React, {Component} from "react";
-import {Text, StyleSheet, Dimensions, Animated, Keyboard, Image} from "react-native";
+import {Text, StyleSheet, Dimensions, Animated, Keyboard, View} from "react-native";
 import {Colors} from "../../config/colors";
 import {Settings} from "../../config/settings";
-import LinearGradient from "react-native-linear-gradient";
 import InputText from "../shared/InputText";
 import BlackButton from "../shared/BlackButton";
 import {Transition} from "react-navigation-fluid-transitions";
 import TextLinked from "../shared/TextLinked";
 import {verticalScale} from "../../config/responsiveness";
+
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
@@ -57,11 +57,7 @@ export default class LoginScreen extends Component {
     return (
       <Transition appear="horizontal">
         <Animated.View style={{paddingBottom: this.keyboardHeight}}>
-          <LinearGradient
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-            style={styles.homeContainer}
-            colors={[Colors.home1, Colors.home2]}>
+          <View style={styles.homeContainer}>
             <Animated.Image
               fadeDuration={0}
               style={[styles.logo, {maxHeight: this.imageHeight}]}
@@ -72,9 +68,9 @@ export default class LoginScreen extends Component {
             <InputText style={styles.input} placeholder={"SENHA"}/>
             <BlackButton style={{marginTop: '5%', marginBottom: '3%'}} text={"Acessar"}/>
             <Text style={[styles.loginText, {marginBottom: '3%'}]}>Ainda não possui conta?</Text>
-            <TextLinked style={styles.textLinked} onPress={() => navigate("Signup")} text={"CRIAR CONTA"}/>
-            <TextLinked style={styles.textLinked} onPress={() => navigate("Home")} text={"ENTRAR COM O FACEBOOK"}/>
-          </LinearGradient>
+            <TextLinked textStyle={styles.textLinked} onPress={() => navigate("Signup")} text={"CRIAR CONTA"}/>
+            <TextLinked textStyle={styles.textLinked} onPress={() => navigate("Home")} text={"ENTRAR COM O FACEBOOK"}/>
+          </View>
         </Animated.View>
       </Transition>
     );
@@ -94,13 +90,13 @@ const styles = new StyleSheet.create({
   },
   loginText: {
     color: Colors.white,
-    fontSize: 16
+    fontSize: verticalScale(16)
   },
   input: {
     marginTop: '3%'
   },
   textLinked: {
     textDecorationLine: 'underline',
-    fontSize: verticalScale(20)
+    fontSize: verticalScale(15)
   }
 });

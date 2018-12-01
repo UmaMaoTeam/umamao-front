@@ -3,6 +3,7 @@ import HomeScreen from "../components/home/HomeScreen";
 import LoginScreen from "../components/home/LoginScreen";
 import SignupScreen from "../components/home/SignupScreen";
 import { FluidNavigator } from "react-navigation-fluid-transitions";
+import CameraScreen from "../components/shared/CameraScreen";
 
 
 const HomeNavigator = FluidNavigator(
@@ -17,6 +18,10 @@ const HomeNavigator = FluidNavigator(
     },
     Signup: {
       screen: SignupScreen,
+      navigationOptions: {header: null}
+    },
+    Camera: {
+      screen: CameraScreen,
       navigationOptions: {header: null}
     }
   },

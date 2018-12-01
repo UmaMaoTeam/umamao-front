@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {Text, View, StyleSheet, Image, Dimensions, Animated} from "react-native";
-import LinearGradient from "react-native-linear-gradient";
 import {Colors} from "../../config/colors";
 import TextLinked from "../shared/TextLinked";
 import {Transition} from "react-navigation-fluid-transitions";
@@ -16,16 +15,12 @@ export default class HomeScreen extends Component {
     return (
       <Transition appear="horizontal">
         <View style={styles.container}>
-          <LinearGradient
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-            style={styles.homeContainer}
-            colors={[Colors.home1, Colors.home2]}>
+          <View style={styles.homeContainer}>
             <Image
               fadeDuration={0}
               style={styles.logo}
               defaultSource={Settings.LOGO}
-              source={require('../../../assets/oldLogo.png')}/>
+              source={require('../../../assets/old-logo.png')}/>
             <View style={styles.containerIntroduction}>
               <Text style={
                 {fontWeight: '700', color: Colors.white, fontSize: 18}
@@ -45,7 +40,7 @@ export default class HomeScreen extends Component {
               }>Vamos?</Text>
             </View>
             <TextLinked onPress={() => navigate("Login")} text={"Acessar"} icon={"arrow-forward"}/>
-          </LinearGradient>
+          </View>
         </View>
       </Transition>
     );

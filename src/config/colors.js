@@ -5,5 +5,6 @@ export const Colors = {
   black: "#000",
   blackButton: "#1d2633",
   home1: "#ff5370",
-  home2: "#ff5300"
+  home2: "#ff5300",
+  mix: "#ff543a"
 };
